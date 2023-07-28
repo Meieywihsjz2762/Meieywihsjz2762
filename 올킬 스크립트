@@ -1,0 +1,15 @@
+local players = game:GetService("Players")
+local monster = game.Workspace.Monster
+
+
+local function allKill()
+    for _, player in ipairs(players:GetPlayers()) do
+        if player.Character then
+            local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+            if humanoidRootPart then
+                humanoidRootPart.CFrame = monster.CFrame + Vector3.new(0, 5, 0)
+                wait(1)
+            end
+        end
+    end
+end
